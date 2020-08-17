@@ -1,11 +1,11 @@
-var express = require("express");
-var app = express();
+const express = require("express");
+const app = express();
 const helmet = require("helmet");
-var http = require("http").Server(app);
-var router = require("./router");
-var cors = require('cors')
-var bodyParser = require("body-parser");
-var port = process.env.PORT || 5000;
+const http = require("http").Server(app);
+const router = require("./router");
+const cors = require('cors')
+const bodyParser = require("body-parser");
+const config = require('./config/config');
 
 class Server {
   constructor() {
@@ -14,8 +14,8 @@ class Server {
     this.app.use(bodyParser.json());
     this.app.use(helmet.frameguard());
     app.use(cors())
-    this.app.listen(port, function() {
-        console.log("Server listening on port: " + port);
+    this.app.listen(config.config.port, function() {
+        console.log("Server listening on port: " + config.config.port);
     });
     router(this.app);
   }

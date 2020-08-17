@@ -31,6 +31,7 @@ const crawlUrl = async (url, currDepth) => {
   try {
     response = await got(url);
   } catch (error) {
+    console.log("error" + error);
     return null;
   }
   console.log(`Crawling DEPTH:${currDepth} >> ${url}`);

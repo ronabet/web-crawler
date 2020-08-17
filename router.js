@@ -1,8 +1,7 @@
-const validator = require('./validator/inputValidator');
+const crawlerModule = require('./crawlerModule/crawler');
 
-module.exports = function(app) {
-  app.post("/api/crawl", (req, res) => {
-    
+module.exports = (app) => {
+  app.post("/api/crawl", async (req, res) => {
+    await crawlerModule.crawl(req.body.startUrl, req.body.maxDepth, req.body.maxPages, res);
   });
-  
-};
+}

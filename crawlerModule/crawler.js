@@ -1,6 +1,6 @@
 const utils = require('../utils/utils')
 
-exports.crawl = async (startUrl, maxDepth, maxPages, res) => {
+exports.crawler = async (startUrl, maxDepth, maxPages, res) => {
   let currentDepthLinks = (await utils.findLinks(startUrl, 0)).links;
   let nextDepthLinks = [];
   const crawlerOutput = [];

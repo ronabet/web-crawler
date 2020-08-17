@@ -10,10 +10,10 @@ const config = require('./config/config');
 class Server {
   constructor() {
     this.app = express();
+    this.app.use(cors())
     this.app.use(bodyParser.urlencoded({ extended: true }));
     this.app.use(bodyParser.json());
     this.app.use(helmet.frameguard());
-    app.use(cors())
     this.app.listen(config.config.port, function() {
         console.log("Server listening on port: " + config.config.port);
     });
@@ -22,4 +22,4 @@ class Server {
 }
 
 module.exports.Server = Server;
-const server = new Server();
+// const server = new Server();

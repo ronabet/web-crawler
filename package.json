@@ -1,0 +1,20 @@
+{
+  "name": "web-crawler-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ron Nabet",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "get-urls": "^9.2.1",
+    "got": "^11.5.2",
+    "helmet": "^4.1.0"
+  }
+}
